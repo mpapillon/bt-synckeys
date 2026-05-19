@@ -112,6 +112,7 @@ class ProcessWindowKeys:
 
             require_update |= LinuxDeviceInfo.set_config_parameter(linux_config, "LinkKey", "Key", windows_key)
             require_update |= LinuxDeviceInfo.set_config_parameter(linux_config, "General", "Trusted", "true")
+            require_update |= LinuxDeviceInfo.set_config_parameter(linux_config, "General", "Paired", "yes")
             require_update |= LinuxDeviceInfo.set_config_parameter(linux_config, "General", "Blocked", "false")
 
             if not require_update: return
@@ -145,6 +146,9 @@ class ProcessWindowKeys:
         process_parameter_by_key("KeyLength", keys_sections, "EncSize", lambda v: str(int(RegistryParameterFormat.dword(v)) or 16))
         process_parameter_by_key("EDIV", keys_sections, "EDiv", lambda v: str(int(RegistryParameterFormat.dword(v)) or 16))
         process_parameter_by_key("ERand", keys_sections, "Rand", lambda v: str(int(RegistryParameterFormat.hex_b(v)) or 16))
+        require_update |= LinuxDeviceInfo.set_config_parameter(linux_config, "General", "Trusted", "true")
+        require_update |= LinuxDeviceInfo.set_config_parameter(linux_config, "General", "Paired", "yes")
+        require_update |= LinuxDeviceInfo.set_config_parameter(linux_config, "General", "Blocked", "false")
 
         if not require_update: return
 
