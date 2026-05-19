@@ -305,7 +305,7 @@ def print_adapter_mac(current_adapter_mac):
     # Only print the adapter mac information if we are starting for the first time or when we change adapter group of devices.
     # Will work only if we sort device and adapter\device pairs first such that they are grouped together.
     if _prev_adapter_mac != current_adapter_mac:
-        if _prev_adapter_mac != None:
+        if _prev_adapter_mac is not None:
             print()
         print(f"Bluetooth Adapter - {current_adapter_mac}")
     _prev_adapter_mac = current_adapter_mac
@@ -360,7 +360,7 @@ def __main__():
             content = f.read()
     else:
         print(
-            "ERROR: You must specify either a Windows directory (-w) or a Registery file (-r)"
+            "ERROR: You must specify either a Windows directory (-w) or a Registry file (-r)"
         )
         return 1
     config = load_keys(content)
