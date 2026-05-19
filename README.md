@@ -1,6 +1,7 @@
 bt-synckeys
 ---
 Python script to sync Bluetooth pairing keys from Windows to your Linux installations.
+**Now don't need to pair device in Linux for successful sync*
 
 ## Credits
 - https://wiki.archlinux.org/title/Bluetooth#Dual_boot_pairing
@@ -16,7 +17,7 @@ Python script to sync Bluetooth pairing keys from Windows to your Linux installa
 * **sudo** / **root** access.
 
 ## Usage
-For either of the methods to work, **you need to have the Bluetooth devices paired with both your Linux and Windows systems beforehand**. This is necessary to create the required initial pairing configurations.
+For either of the methods to work, **you need to have the Bluetooth devices paired with Windows system**. This is necessary to create the required initial pairing configurations.
 
 Do note, however, that **it's not necessary to have the devices connected to your system at the time of the procedures.**
 But it **is** necessary to have the device **working on Windows** prior to running the script, as it will read the pairing keys from the Windows registry.
